@@ -250,9 +250,8 @@ function $buo_f(){
 try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 catch(e){window.attachEvent("onload", $buo_f)}
 
-var query = window.location.pathname
-var clientid = query.substr(query.length - 40);        
-alert(clientid);
+var query = window.location.pathname.split('&');
+alert(query);
 
 
 </script> 

@@ -266,7 +266,9 @@ var clientid = query1[1];
 
 Parse.initialize("oCAgXQpvSEFeVv32QyLvjL5S9fPBOvYgbGab2L3j", "O0Zk5PBjE5BdAgZciiKwsRCezo1UxBzwMge5wr2O");
 
-Parse.Cloud.run('GETfromCloud', {}, {
+Parse.Cloud.run('GETfromCloud', {
+  Clientid: Clientid,
+}, {
         success: function(result) {
           
         },

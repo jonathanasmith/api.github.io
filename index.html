@@ -272,14 +272,9 @@ function getQueryVariable(variable)
 }
 
 var clientid = getQueryVariable("code");
-var shopifyid = getQueryVariable("state");
-
-
-//var query = window.location.href
-//var query1 = query.split("&code=");
-//var clientid = query1[1].toString();
-//var query2 = query.split("&state=");
-//var shopifyid = query2[1].toString();
+var state = getQueryVariable("state");
+var trackerid = state.substring(0,3);
+var shopifyid - state.substring(3);
 
 
 Parse.initialize("oCAgXQpvSEFeVv32QyLvjL5S9fPBOvYgbGab2L3j", "O0Zk5PBjE5BdAgZciiKwsRCezo1UxBzwMge5wr2O");

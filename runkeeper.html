@@ -274,15 +274,19 @@ function getQueryVariable(variable)
 var clientid = getQueryVariable("code");
 var state = getQueryVariable("state");
 var trackerid = state.substring(0,3);
-var shopifyid = state.substring(3);
+var shopifyid = state.substring(3,13);
+var personaldetails = state.substring(13);
+var personaldetails1 = personaldetails.split('+');
+alert(personaldetails1);
 
 
 Parse.initialize("oCAgXQpvSEFeVv32QyLvjL5S9fPBOvYgbGab2L3j", "O0Zk5PBjE5BdAgZciiKwsRCezo1UxBzwMge5wr2O");
 
-Parse.Cloud.run('RunkeeperTokenExchange', {
+Parse.Cloud.run('FitbitTokenExchange', {
   Clientid: clientid,
   Shopifyid: shopifyid,
   Trackerid: trackerid,
+  Personaldetails: personaldetails1,
 }, {
         success: function(result) {
         },
@@ -290,6 +294,7 @@ Parse.Cloud.run('RunkeeperTokenExchange', {
         
         }
       });
+
 
 
 </script> 

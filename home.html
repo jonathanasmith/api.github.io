@@ -272,11 +272,8 @@ function getQueryVariable(variable)
        return(false);
 }
 
-var clientid = getQueryVariable("code");
-var state = getQueryVariable("state");
-var trackerid = state.substring(0,3);
-var shopifyid = state.substring(3);
-
+var userid = getQueryVariable("id");
+alert(userid);
 
 //Parse.initialize("oCAgXQpvSEFeVv32QyLvjL5S9fPBOvYgbGab2L3j", "O0Zk5PBjE5BdAgZciiKwsRCezo1UxBzwMge5wr2O");
 
@@ -287,17 +284,8 @@ Parse.initialize(
 );
 Parse.serverURL = 'https://pg-app-02wy7n5kpakwpd0x1egajq7s75etfe.scalabl.cloud/1/';
 
-Parse.Cloud.run('GETfromCloud', {
-  Clientid: clientid,
-  Shopifyid: shopifyid,
-  Trackerid: trackerid,
-}, {
-        success: function(result) {
-        },
-        error: function(error) {
-        
-        }
-      });
+
+
 
 
 </script> 

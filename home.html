@@ -283,7 +283,7 @@ Parse.initialize(
 );
 Parse.serverURL = 'https://pg-app-02wy7n5kpakwpd0x1egajq7s75etfe.scalabl.cloud/1/';
 
-
+/*
 Parse.User.logIn(userid, userid, {
   success: function(user) {
     alert("loggedin")
@@ -292,8 +292,7 @@ Parse.User.logIn(userid, userid, {
     alert("You have not linked an activity tracker - please visit your account page to do so");
   }
 });
-
-
+*/
 
 var query = new Parse.Query(Parse.User);
 query.equalTo("shopifyID", userid);
@@ -303,7 +302,7 @@ query.first({
     alert(accesstoken);
   },
   error: function(error) {
-    alert("sonotworking");
+    alert("You have not linked an activity tracker - please visit your account page to do so");
   }
   });
 

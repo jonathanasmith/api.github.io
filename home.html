@@ -286,9 +286,8 @@ Parse.serverURL = 'https://pg-app-02wy7n5kpakwpd0x1egajq7s75etfe.scalabl.cloud/1
 Parse.User.logIn(userid, userid, {
   success: function(user) {
 
-var currentUser = Parse.User.current();
 
-var query = new Parse.Query(currentuser);
+var query = new Parse.Query(Parse.User);
 query.equalTo("shopifyID", userid);
 query.first({
   success: function(object) {

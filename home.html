@@ -285,13 +285,26 @@ Parse.serverURL = 'https://pg-app-02wy7n5kpakwpd0x1egajq7s75etfe.scalabl.cloud/1
 
 Parse.User.logIn(userid, userid, {
   success: function(user) {
-    alert("itworked");
+    alert("You are logged in");
   },
   error: function(user, error) {
-    alert("itnoworked");
+    alert("You have not linked an activity tracker - please visit your account page to do so");
   }
 });
 
+var currentUser = Parse.User.current();
+
+var query = new Parse.Query(currentuser);
+query.equalTo("shopifyID", userid);
+query.first({
+  success: function(object) {
+    var accesstoken = object.get('accesstoken');
+    alert(accesstoken);
+  },
+  error: function(error) {
+    alert("sonotworking");
+  }
+});
 
 
 

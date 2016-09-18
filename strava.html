@@ -302,6 +302,17 @@ Parse.Cloud.run('StravaTokenExchange', {
       });
 
 
+Parse.Cloud.run('LatestActivity', {
+
+        success: function(result) {
+          alert("it worked 2")
+        },
+        error: function(error) {
+          alert("it not worked 2")
+        }
+      });
+
+
 
 
 

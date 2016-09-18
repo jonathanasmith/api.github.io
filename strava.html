@@ -282,7 +282,7 @@ alert("Thanks for helping me out "+personaldetails1[1]+". Your work is now done!
 
 Parse.initialize("oCAgXQpvSEFeVv32QyLvjL5S9fPBOvYgbGab2L3j", "O0Zk5PBjE5BdAgZciiKwsRCezo1UxBzwMge5wr2O");
 
-Parse.Cloud.run('StravaTokenExchange', {
+/*Parse.Cloud.run('StravaTokenExchange', {
   Clientid: clientid,
   Shopifyid: shopifyid,
   Trackerid: trackerid,
@@ -292,6 +292,17 @@ Parse.Cloud.run('StravaTokenExchange', {
         },
         error: function(error) {
         
+        }
+      });*/
+
+Parse.Cloud.run('LatestActivity', {
+
+}, {
+        success: function(result) {
+          alert('it worked');
+        },
+        error: function(error) {
+          alert('it not worked')
         }
       });
 

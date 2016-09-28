@@ -271,7 +271,8 @@ function getQueryVariable(variable)
        return(false);
 }
 
-var clientid = getQueryVariable("code");
+var clientid1 = getQueryVariable("code");
+var clientid = clientid1.slice(0, -3);
 var state = getQueryVariable("state");
 var trackerid = state.substring(0,3);
 var shopifyid = state.substring(3,13);

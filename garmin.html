@@ -276,8 +276,9 @@ var trackerid = state.substring(0,3);
 var shopifyid = state.substring(3,13);
 var personaldetails = state.substring(13);
 var personaldetails1 = personaldetails.split('+');
+var timestamp = Math.round(new Date().getTime()/1000);
 
-alert(trackerid+"|"+shopifyid+"|"+personaldetails1);
+alert(trackerid+"|"+shopifyid+"|"+personaldetails1+"|"+timestamp);
 
 
 Parse.initialize(
@@ -300,11 +301,6 @@ Parse.Cloud.run('StravaTokenExchange', {
           alert("it not worked")
         }
       });
-
-
-
-
-
 
 </script> 
 	

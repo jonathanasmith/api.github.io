@@ -300,10 +300,10 @@ Parse.Cloud.run('GarminRequestToken', {
   Nonce: nonce,
 }, {
         success: function(result) {
-          alert("it worked")
+          alert(consumerKey);
         },
         error: function(error) {
-          alert("it not worked")
+          alert(sigstring);
         }
       });
 

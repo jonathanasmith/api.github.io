@@ -271,6 +271,14 @@ function getQueryVariable(variable)
        return(false);
 }
 
+function nonceCreator(length) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for(var i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+}
 
 var state = getQueryVariable("state");
 var trackerid = state.substring(0,3);
@@ -278,14 +286,7 @@ var shopifyid = state.substring(3,13);
 var personaldetails = state.substring(13);
 var personaldetails1 = personaldetails.split('+');
 var timestamp = Math.round(new Date().getTime()/1000);
-var nonce = function(length) {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for(var i = 0; i < 10; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return text;
-}
+var nonce = nonceCreator(10);
 
 alert(trackerid+"|"+shopifyid+"|"+personaldetails1+"|"+timestamp+"|"+nonce);
 

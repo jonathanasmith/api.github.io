@@ -269,6 +269,7 @@ function getQueryVariable(variable)
        return(false);
 };
 
+/*
 var randomString = function(length) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -277,14 +278,20 @@ var randomString = function(length) {
     }
     return text;
 };
+*/
 
-var nonce = randomString(10);
+//var nonce = randomString(10);
+//var timestamp = Math.round(new Date().getTime()/1000);
+
+var nonce = "1"
+var timestamp = "2"
+
+
 //var state = getQueryVariable("state");
 //var trackerid = state.substring(0,3);
 //var shopifyid = state.substring(3,13);
 //var personaldetails = state.substring(13);
 //var personaldetails1 = personaldetails.split('+');
-var timestamp = Math.round(new Date().getTime()/1000);
 
 
 Parse.initialize(

@@ -260,6 +260,10 @@ try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 catch(e){window.attachEvent("onload", $buo_f)}
 
 
+var d = new Date();
+d.setHours(0,0,0,0);
+
+/*
 function getQueryVariable(variable)
 {
        var query = window.location.search.substring(1);
@@ -271,6 +275,8 @@ function getQueryVariable(variable)
        return(false);
 }
 
+
+
 var clientid = getQueryVariable("code");
 var state = getQueryVariable("state");
 var trackerid = state.substring(0,3);
@@ -279,12 +285,9 @@ var personaldetails = state.substring(13);
 var personaldetails1 = personaldetails.split('+');
 
 
-var d = new Date();
-d.setHours(0,0,0,0);
 
-alert(d);
 
-/*
+
 Parse.initialize(
   "oCAgXQpvSEFeVv32QyLvjL5S9fPBOvYgbGab2L3j",
   "O0Zk5PBjE5BdAgZciiKwsRCezo1UxBzwMge5wr2O"

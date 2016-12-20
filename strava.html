@@ -307,14 +307,14 @@ Parse.Cloud.run('StravaTokenExchange', {
   Personaldetails: personaldetails1,
 }, {
         success: function(result) {
-          document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to your account page. Please click <a href='http://kick.run/account'>here</a> if you are not re-directed</p>"
+          document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to your account page. Please click <a href='https://kick.run/account'>here</a> if you are not re-directed</p>"
             var timer = setTimeout(function() {
-            window.location='http://kick.run/account/'
+            window.location='https://kick.run/account/'
             }, 3000);
 
         },
         error: function(error) {
-          document.getElementById("linkfail").innerHTML = "<p class='subheaders'>There has been an error linking your account, please <a href='http://kick.run/account'>try again</a> and contact hello@kick.run if the problem persists</p>"
+          document.getElementById("linkfail").innerHTML = "<p class='subheaders'>There has been an error linking your account, please <a href='https://kick.run/account'>try again</a> and contact hello@kick.run if the problem persists</p>"
 
         }
       });

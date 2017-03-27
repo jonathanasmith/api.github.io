@@ -302,12 +302,6 @@ Parse.Cloud.run('StravaTokenExchange', {
 }, {
         success: function(result) {
           
-          var a0 = result[0];
-          var a1 = JSON.stringify(a0);
-          var a2 = JSON.parse(a1);
-          var a3 = a2.access_token;
-          alert(a3);
-          
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to your account page. Please click <a href='https://kick.run/account'>here</a> if you are not re-directed</p>"
             var timer = setTimeout(function() {
             window.location='https://kick.run/account?token=newuser'

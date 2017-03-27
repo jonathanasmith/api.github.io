@@ -253,8 +253,6 @@
 
 <script> 
 
-
-
 var $buoop = {c:2}; 
 function $buo_f(){ 
  var e = document.createElement("script"); 
@@ -281,17 +279,12 @@ function getQueryVariable(variable)
        return(false);
 }
 
-
-
 var clientid = getQueryVariable("code");
 var state = getQueryVariable("state");
 var trackerid = state.substring(0,3);
 var shopifyid = state.substring(3,13);
 var personaldetails = state.substring(13);
-var personaldetails1 = personaldetails.split('%2C'); 
-
-
-
+var personaldetails1 = personaldetails.split('%2C');
 
 
 Parse.initialize(
@@ -308,9 +301,12 @@ Parse.Cloud.run('StravaTokenExchange', {
   Personaldetails: personaldetails1,
 }, {
         success: function(result) {
+          
+          alert(result.access_token);
+
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to your account page. Please click <a href='https://kick.run/account'>here</a> if you are not re-directed</p>"
             var timer = setTimeout(function() {
-            window.location='https://kick.run/account/'
+            window.location='https://kick.run/account?token=insertaccesstokenhere'
             }, 3000);
 
         },

@@ -294,7 +294,8 @@ Parse.Cloud.run('StravaTempTokenExchange', {
 }, {
         success: function(result) {
           
-          alert(result);
+          var access_token = tokenresponse.access_token;
+          alert(access_token)
 
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to the product page."
             /*var timer = setTimeout(function() {

@@ -289,15 +289,17 @@ Parse.initialize(
 Parse.serverURL = 'https://parseapi.back4app.com';
 
 
-Parse.Cloud.run('StravaTokenExchange', {
+Parse.Cloud.run('StravaTempTokenExchange', {
   Clientid: clientid,
-  State: state,
 }, {
         success: function(result) {
+          
+          alert(result);
+
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to the product page."
-            var timer = setTimeout(function() {
+            /*var timer = setTimeout(function() {
             window.location='https://kick.run/account/'
-            }, 3000);
+            }, 3000);*/
 
         },
         error: function(error) {

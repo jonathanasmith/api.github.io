@@ -280,6 +280,7 @@ function getQueryVariable(variable)
 
 var clientid = getQueryVariable("code");
 var state = getQueryVariable("state");
+var state1= decodeURIComponent(state);
 
 Parse.initialize(
   "Nj0sckAt3wTGK6V0X8rt3rHSfyUg8zhvocUspzKT",
@@ -295,7 +296,7 @@ Parse.Cloud.run('StravaTempTokenExchange', {
           var access_token = result.access_token;
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to the product page."
             var timer = setTimeout(function() {
-            window.location='https://kick.run/collections/distance-series/'+state+'?accesstoken='+access_token
+            window.location='https://kick.run/collections/distance-series'+state1+'?accesstoken='+access_token
             }, 2000);
 
         },

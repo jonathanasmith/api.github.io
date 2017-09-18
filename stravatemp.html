@@ -262,7 +262,6 @@ function $buo_f(){
 try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 catch(e){window.attachEvent("onload", $buo_f)}
 
-
 var d = new Date();
 d.setHours(-24,0,0,0);
 var e = d/1000;
@@ -288,7 +287,6 @@ Parse.initialize(
 );
 Parse.serverURL = 'https://parseapi.back4app.com';
 
-
 Parse.Cloud.run('StravaTempTokenExchange', {
   Clientid: clientid,
 }, {
@@ -297,8 +295,8 @@ Parse.Cloud.run('StravaTempTokenExchange', {
           var access_token = result.access_token;
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to the product page."
             var timer = setTimeout(function() {
-            window.location='https://kick.run/products/5k-by-kick-t-shirt-m?accesstoken='+access_token
-            }, 3000);
+            window.location='https://kick.run/collections/distance-series/'+state+'?accesstoken='+access_token
+            }, 2000);
 
         },
         error: function(error) {

@@ -297,11 +297,12 @@ Parse.Cloud.run('StravaTempTokenExchange', {
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to the product page."
             var timer = setTimeout(function() {
             window.location='https://kick.run/collections/distance-series'+state1+'?accesstoken='+access_token
-            }, 2000);
+            }, 1000);
 
         },
         error: function(error) {
-          document.getElementById("linkfail").innerHTML = "<p class='subheaders'>There has been an error linking your account, please try again</a> and contact hello@kick.run if the problem persists</p>"
+          document.getElementById("linkfail").innerHTML = "<p class='subheaders'>There has been an error linking your account, please <a href=''https://kick.run/collections/distance-series"+state1+"?accesstoken="+access_token+">try again</a> and contact hello@kick.run if the problem persists</p>"
+
 
         }
       });

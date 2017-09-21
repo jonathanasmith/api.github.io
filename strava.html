@@ -287,8 +287,6 @@ var personaldetails = state.substring(13);
 var personaldetails1 = personaldetails.split('%2C'); 
 
 
-
-
 Parse.initialize(
   "Nj0sckAt3wTGK6V0X8rt3rHSfyUg8zhvocUspzKT",
   "B5pmus2KMpTC8Pob9BF5kngYQJOQuP2K5SyTKuHq"
@@ -303,8 +301,9 @@ Parse.Cloud.run('StravaTokenExchange', {
   Personaldetails: personaldetails1,
 }, {
         success: function(result) {
-          var accesstoken = result.access_token;
-          alert(accesstoken);
+          var result1 = result.data
+          var access_token = result1.access_token;
+          alert(access_token);
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed back to your account page. Please click <a href='https://kick.run/account'>here</a> if you are not re-directed</p>"
             var timer = setTimeout(function() {
             window.location='https://kick.run/account/'

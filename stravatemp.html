@@ -297,7 +297,7 @@ Parse.Cloud.run('StravaTempTokenExchange', {
           document.getElementById("linksuccess").innerHTML = "<p class='subheaders'>Your Strava account has been linked and you are now being re-directed."
 
             var timer = setTimeout(function() {
-            if(state1=="https://kick.run/pages/distance-series"){
+            if(state1=="https://kick.run/pages/distance-series" || state1=="https://kick.run/pages/outdoor-city" ){
               window.location=state1+'?accesstoken='+access_token
               }
             else{

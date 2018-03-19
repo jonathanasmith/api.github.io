@@ -281,10 +281,7 @@ function getQueryVariable(variable)
 
 var clientid = getQueryVariable("code");
 var state = getQueryVariable("state");
-var trackerid = state.substring(0,3);
-var shopifyid = state.substring(3,15);
-var personaldetails = state.substring(15);
-var personaldetails1 = personaldetails.split('%2C'); 
+var personaldetails = state.split('%2C');
 
 
 Parse.initialize(
@@ -296,9 +293,7 @@ Parse.serverURL = 'https://parseapi.back4app.com';
 
 Parse.Cloud.run('StravaTokenExchange', {
   Clientid: clientid,
-  Shopifyid: shopifyid,
-  Trackerid: trackerid,
-  Personaldetails: personaldetails1,
+  Personaldetails: personaldetails,
 }, {
         success: function(result) {
           var result1 = result.data

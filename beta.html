@@ -3,13 +3,14 @@
  <head>
     <meta charset="UTF-8">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1, max-scale=1, shrink-to-fit=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, min-scale=1, max-scale=1, shrink-to-fit=no">
     <title>Home</title>
     <link href="css/default.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
  </head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" ></script>
+<script src="https://npmcdn.com/parse@1.9.2/dist/parse.min.js"></script>
  <body>
   <header class="F_1 FR B_i">
     <div class="F_1 flexCell_v"></div>
@@ -18,7 +19,7 @@
   </header>
   <div class="F_1 flexCell_v">
     <div class="">
-      <div class="h3 TA_C M_L_50 M_R  _50"><span id="connectSuccess"></span></div>
+      <div class="h3 TA_C M_L_50 M_R_50"><span id="connectSuccess"></span></div>
     </div>
   </div>
   <footer class="F_1 B_i FR H_75">
@@ -38,39 +39,21 @@
 </html>
 
 <script src="https://npmcdn.com/parse@1.11.1/dist/parse.js"></script>
-<script src="JS/main.js"></script>
-
 
 <script>
 
-
-var $buoop = {c:2}; 
-function $buo_f(){ 
- var e = document.createElement("script"); 
- e.src = "//browser-update.org/update.js"; 
- document.body.appendChild(e);
-};
-try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-catch(e){window.attachEvent("onload", $buo_f)}
-
-
-var d = new Date();
-d.setHours(-24,0,0,0);
-var e = d/1000;
-
 function getQueryVariable(variable)
 {
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
+ var query = window.location.search.substring(1);
+ var vars = query.split("&");
+ for (var i=0;i<vars.length;i++) {
+         var pair = vars[i].split("=");
+         if(pair[0] == variable){return pair[1];}
+ }
+ return(false);
 }
 
 var clientid = getQueryVariable("code");
-var state = getQueryVariable("state");
 
 Parse.initialize(
   "bxr71QksTuJsPlLRodiehCBmfPtrKIzSsuu2YtId",
@@ -78,26 +61,21 @@ Parse.initialize(
 );
 Parse.serverURL = 'https://parseapi.back4app.com';
 
-Parse.Cloud.run('StravaBetaExchange', {
+Parse.Cloud.run('stravaTokenExchange_beta', {
   Clientid: clientid,
 }, {
-        success: function(result) {
-          var result1 = result.data
-          var access_token = result1.access_token;
-          document.getElementById("connectSuccess").innerHTML = "Your Strava account has been linked and you are now being re-directed. Please click <a href='https://beta.kick.run/'>here</a> if you are not re-directed"
-            var timer = setTimeout(function() {
-            window.location='https://beta.kick.run?accesstoken='
-            }, 3000);
-        },
-        error: function(error) {
-          document.getElementById("connectSuccess").innerHTML = "There has been an error linking your account, please <a href='https://beta.kick.run'>try again</a> and contact hello (at) kick.run if the problem persists</p>"
-        }
-      });
-
-
-
-
-
+    success: function(result) {
+      var result1 = result.data
+      var access_token = result1.access_token;
+      document.getElementById("connectSuccess").innerHTML = "Your Strava account has been linked and you are now being re-directed. Please click <a href='https://beta.kick.run/'>here</a> if you are not re-directed"
+        var timer = setTimeout(function() {
+        window.location='https://beta.kick.run?accesstoken='
+        }, 3000);
+    },
+    error: function(error) {
+      document.getElementById("connectSuccess").innerHTML = "There has been an error linking your account, please <a href='https://beta.kick.run'>try again</a> and contact hello (at) kick.run if the problem persists</p>"
+    }
+  });
 
 </script> 
   

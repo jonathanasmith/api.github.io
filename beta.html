@@ -67,9 +67,10 @@ Parse.Cloud.run('stravaTokenExchange_beta', {
     success: function(result) {
       var result1 = result.data
       var access_token = result1.access_token;
+      alert(result);
       document.getElementById("connectSuccess").innerHTML = "Your Strava account has been linked and you are now being re-directed. Please click <a href='https://beta.kick.run/'>here</a> if you are not re-directed"
         var timer = setTimeout(function() {
-        window.location='https://beta.kick.run?accesstoken='
+        window.location='https://beta.kick.run?accesstoken='+access_token
         }, 3000);
     },
     error: function(error) {
